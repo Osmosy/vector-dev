@@ -1,0 +1,2 @@
+{"req_id": "REQ-0001", "stage": 4, "statement": "приветствие возвращает имя", "source": "research/INDEX.json#r1", "code_address": "src/app.py:4", "log_evidence": "logs/run.log:1"}
+{"req_id": "REQ-0002", "stage": 4, "statement": "замороженный набор проходит", "source": "research/INDEX.json#r2", "code_address": "tests/test_app.py:1", "log_evidence": "logs/run.log:2"}

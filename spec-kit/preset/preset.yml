@@ -1,0 +1,51 @@
+schema_version: "1.0"
+
+preset:
+  id: "vector-dev"
+  name: "Вектор разработка — стандарты команды"
+  version: "1.0.0"
+  description: "Наши правила в spec-kit: реестр первичен, фальсифицируемые проверки, вентили этапов, KPI как требование, коды выхода 0/1/2/3"
+  author: "Osmosy"
+  repository: "https://github.com/Osmosy/vector-dev"
+  license: "MIT"
+
+requires:
+  speckit_version: ">=1.0.0"
+
+provides:
+  templates:
+    - type: "template"
+      name: "constitution-template"
+      file: "templates/constitution-template.md"
+      description: "Конституция проекта: П-01…П-13, Г1…Г5, KPI, коды выхода"
+      replaces: "constitution-template"
+
+    - type: "template"
+      name: "spec-template"
+      file: "templates/spec-template.md"
+      description: "Спека с REQ-кодами, источниками с sha256 и проверками, которые можно провалить"
+      replaces: "spec-template"
+
+    - type: "template"
+      name: "plan-template"
+      file: "templates/plan-template.md"
+      description: "План: карта требований, контракты, этапы с вентилями"
+      replaces: "plan-template"
+
+    - type: "template"
+      name: "tasks-template"
+      file: "templates/tasks-template.md"
+      description: "Задачи с обязательной ссылкой на REQ и командой проверки"
+      replaces: "tasks-template"
+
+    - type: "template"
+      name: "checklist-template"
+      file: "templates/checklist-template.md"
+      description: "Чек-лист приёмки с кодами выхода и журналом"
+      replaces: "checklist-template"
+
+tags:
+  - "quality-gates"
+  - "requirements"
+  - "acceptance"
+  - "vector-dev"

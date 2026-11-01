@@ -30,4 +30,10 @@ jobs:
         run: python3 examples/acceptance/selfcheck.py
 
       - name: Синтаксис чекеров
-        run: python3 -m py_compile examples/acceptance/check_stage.py examples/acceptance/selfcheck.py
+        run: python3 -m py_compile examples/acceptance/check_stage.py examples/acceptance/selfcheck.py spec-kit/check_spec.py spec-kit/selfcheck.py
+
+      - name: Чекер спецификаций — семь сценариев
+        run: python3 spec-kit/selfcheck.py
+
+      - name: Пресет spec-kit — id, пять шаблонов, файлы на месте
+        run: python3 spec-kit/check_preset.py

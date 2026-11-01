@@ -167,6 +167,25 @@ project/
 `SKILL.md` — та же методика в форме навыка Hermes: описание, триггеры, правила, подводные камни,
 чек-лист проверки. Копируется в `~/.hermes/skills/software-development/vector-development/`.
 
+## Стандарты в spec-kit
+
+Правила этого репозитория поставляются как пресет для [github/spec-kit](https://github.com/github/spec-kit):
+конституция, спека, план, задачи и чек-лист подменяются нашими, а вентиль Г3 становится
+машинной проверкой.
+
+```bash
+uv tool install specify-cli
+specify init my-project --integration claude && cd my-project
+specify preset add --dev ~/projects/vector-dev/spec-kit/preset
+python3 spec-kit/check_spec.py --root . --json     # 0 — принято, 1 — находки, 2 — плохой вход, 3 — проверка подменена
+python3 spec-kit/selfcheck.py                       # 7 сценариев на временных копиях
+```
+
+Чекер отвечает на восемь вопросов: уникальность REQ-кодов, источник и приоритет у каждого
+требования, фальсифицируемая проверка, попадание требования в план и в задачи, отсутствие задач
+на несуществующие требования, отсутствие плейсхолдеров шаблона, sha256 и дата у источников.
+Подробности — `spec-kit/README.md`.
+
 ## Лицензия
 
 MIT. См. `LICENSE`.

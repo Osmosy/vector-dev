@@ -1,5 +1,7 @@
 # Вектор разработка
 
+[![CI](https://github.com/Osmosy/vector-dev/actions/workflows/ci.yml/badge.svg)](https://github.com/Osmosy/vector-dev/actions/workflows/ci.yml)
+
 Правила агентской разработки: пять этапов, вентиль между каждым, KPI как требование, а не как
 бенчмарк.
 

@@ -13,6 +13,8 @@
 - Скелет проекта `examples/project-skeleton/`, шаблон рамки `templates/RAMKA.md`, чек-лист
   `templates/stage-checklist.md`.
 - `SKILL.md` — та же методика в форме навыка Hermes.
+- CI на Python 3.11/3.12/3.13: чекер на скелете, самопроверка четырёх кодов выхода, синтаксис.
+  `examples/acceptance/selfcheck.py` прогоняет пять сценариев: чисто и четыре способа сломать приёмку.
 
 Числа, на которые опираются правила (ProgramBench 52,4 → 48,8 %; PreciseCoder 3,94 → 8,28 строки
 и no-op 30,8 → 20,5 %), взяты из разборов в репозитории `Osmosy/vector-grace`.

@@ -1,0 +1,33 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  accept:
+    name: Приёмка и самопроверка (Python ${{ matrix.python }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ["3.11", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+
+      - name: Чекер на скелете — ожидается код 0
+        run: python3 examples/acceptance/check_stage.py --root examples/project-skeleton
+
+      - name: Все четыре кода выхода срабатывают
+        run: python3 examples/acceptance/selfcheck.py
+
+      - name: Синтаксис чекеров
+        run: python3 -m py_compile examples/acceptance/check_stage.py examples/acceptance/selfcheck.py
